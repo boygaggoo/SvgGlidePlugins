@@ -15,6 +15,11 @@ buildscript {
     }
 }
 
+plugins {
+    id "com.jfrog.bintray" version "1.7.3"
+    id "com.github.dcendents.android-maven" version "1.5"
+}
+
 allprojects {
     repositories {
         google()
@@ -23,11 +28,12 @@ allprojects {
 }
 
 ext {
+    libraryVersion = '0.1.0'
+
     supportLibraryVersion = '27.0.1'
     glide4Version = '4.3.1'
     glide3Version = '3.8.0'
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+group = 'by.kirich1409.svgloader'
+version = ext.libraryVersion
